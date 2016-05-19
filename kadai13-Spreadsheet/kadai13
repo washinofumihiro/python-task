@@ -1,0 +1,29 @@
+#行と列を入力
+row, cow = (int(i) for i in input().split())
+#配列の初期化(入力された配列を格納するために使う)
+array = []
+#入力された配列を格納
+for i in range(row):
+    swap_list = input().split()
+    array.append(swap_list)
+#行列の合計を格納する配列を初期化
+row_sum = [0 for i in range(row)]
+cow_sum = [0 for i in range(cow)]
+
+#行列の合計を計算
+for i in range(row):
+    for j in range(cow):
+        row_sum[i] += int(array[i][j])
+        cow_sum[j] += int(array[i][j])
+#全体の合計
+all_sum = sum(row_sum)
+
+#計算結果を表示
+for i in range(row):
+    #行と行の合計を表示
+    print(" ".join(map(str,array[i][:])),end = "")
+    print(" {0}".format(row_sum[i]))
+#列の合計と総数を表示
+print(" ".join(map(str,cow_sum)),end = "")
+print(" {0}".format(all_sum))
+
