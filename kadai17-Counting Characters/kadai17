@@ -1,0 +1,13 @@
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+#print(len(alphabet))
+#a = len(alphabet)
+#print(a)
+x = ''
+while True:
+    try:
+        x += input().lower()
+    except EOFError:
+        break
+
+for i in range(len(alphabet)):
+    print("{0} : {1}".format(alphabet[i], int(x.count(alphabet[i]))))
